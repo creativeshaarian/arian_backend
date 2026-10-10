@@ -1,0 +1,38 @@
+import { OnModuleInit } from '@nestjs/common';
+import { Repository } from 'typeorm';
+import { ContentSection } from '../content/entities/content-section.entity';
+import { SiteSetting } from './entities/site-setting.entity';
+import { NavbarItem } from './entities/navbar-item.entity';
+import { HeroSetting } from './entities/hero-setting.entity';
+import { AboutSetting } from './entities/about-setting.entity';
+import { ServiceItem } from './entities/service-item.entity';
+import { StackItem } from './entities/stack-item.entity';
+import { SkillItem } from './entities/skill-item.entity';
+import { ExperienceItem } from './entities/experience-item.entity';
+import { SocialLink } from './entities/social-link.entity';
+import { ContactSetting } from './entities/contact-setting.entity';
+import { FooterSetting } from './entities/footer-setting.entity';
+import { FooterNavLink } from './entities/footer-nav-link.entity';
+import { Testimonial } from './entities/testimonial.entity';
+import { PricingPlan } from './entities/pricing-plan.entity';
+export declare class CmsMigrationService implements OnModuleInit {
+    private readonly contentRepo;
+    private readonly siteSettingRepo;
+    private readonly heroRepo;
+    private readonly navbarItemRepo;
+    private readonly aboutRepo;
+    private readonly serviceRepo;
+    private readonly stackRepo;
+    private readonly skillRepo;
+    private readonly experienceRepo;
+    private readonly socialRepo;
+    private readonly contactRepo;
+    private readonly footerRepo;
+    private readonly footerNavRepo;
+    private readonly testimonialRepo;
+    private readonly pricingRepo;
+    constructor(contentRepo: Repository<ContentSection>, siteSettingRepo: Repository<SiteSetting>, heroRepo: Repository<HeroSetting>, navbarItemRepo: Repository<NavbarItem>, aboutRepo: Repository<AboutSetting>, serviceRepo: Repository<ServiceItem>, stackRepo: Repository<StackItem>, skillRepo: Repository<SkillItem>, experienceRepo: Repository<ExperienceItem>, socialRepo: Repository<SocialLink>, contactRepo: Repository<ContactSetting>, footerRepo: Repository<FooterSetting>, footerNavRepo: Repository<FooterNavLink>, testimonialRepo: Repository<Testimonial>, pricingRepo: Repository<PricingPlan>);
+    onModuleInit(): Promise<void>;
+    private ensureCmsMigratedFlag;
+    migrateFromContentSections(): Promise<void>;
+}
